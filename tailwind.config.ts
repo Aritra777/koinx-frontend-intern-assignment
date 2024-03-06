@@ -8,10 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "koinx-blue": "#0052FE",
+        "koinx-green": "#00A8A8",
+        "koinx-red": "#FF4D4D",
+        "koinx-yellow": "#FFD700",
+        "koinx-black": "#000000",
+        "koinx-white": "#FFFFFF",
+      },
+      borderRadius: {
+        primary: "8px",
       },
     },
   },
