@@ -1,6 +1,5 @@
 import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
-import { Badge } from 'primereact/badge'
 import React from 'react'
 
 interface HeroHeaderProps {
@@ -10,19 +9,20 @@ interface HeroHeaderProps {
     CoinMarketPriceUSD: number
     CoinMarketPriceINR: number
     CoinMarketChange: number
+    MarketCapRank: number
 }
 
 
-function HeroHeader({ CoinImg, CoinName, CoinSymbol, CoinMarketPriceINR, CoinMarketPriceUSD, CoinMarketChange }: HeroHeaderProps) {
+function HeroHeader({ CoinImg, CoinName, CoinSymbol, CoinMarketPriceINR, CoinMarketPriceUSD, CoinMarketChange, MarketCapRank }: HeroHeaderProps) {
     return (
         <>
             <header className='flex  gap-3 items-center'>
-                <Image src={CoinImg || "/"} alt={CoinName} width={40} height={40} />
+                <Image src={CoinImg || "/"} alt={CoinName} width={40} height={40} className='rounded-full' />
                 <div className='flex gap-2 items-center'>
                     <span className='text-xl font-bold'>{CoinName}</span>
                     <span className='text-gray-500 text-sm uppercase font-semibold'>{CoinSymbol}</span>
                 </div>
-                <Badge value="Rank #1" severity="info" />
+                <div className='bg-gray-400 text-white p-2 rounded-md'>Rank # {MarketCapRank}</div>
             </header>
             <div className='flex gap-6 items-start'>
                 <div>

@@ -5,6 +5,7 @@ import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import NavBar from "@/components/common/NavBar";
 import { QueryClientProviderWrapper } from "@/lib/Providers/Queryclient";
+import { HomeProvider } from "@/lib/Context/HomeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,18 +21,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <PrimeReactProvider>
-        <QueryClientProviderWrapper>
-          <body className={inter.className}>
-            <div>
-              <NavBar />
-              <div className="box-content px-3 bg-gray-200">
-                {children}
+      <HomeProvider>
+        <PrimeReactProvider>
+          <QueryClientProviderWrapper>
+            <body className={inter.className}>
+              <div>
+                <NavBar />
+                <div className="box-content px-3 bg-gray-200">
+                  {children}
+                </div>
               </div>
-            </div>
-          </body>
-        </QueryClientProviderWrapper>
-      </PrimeReactProvider>
+            </body>
+          </QueryClientProviderWrapper>
+        </PrimeReactProvider>
+      </HomeProvider>
     </html>
   );
 }

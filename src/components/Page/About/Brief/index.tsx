@@ -1,3 +1,4 @@
+import { useHome } from "@/lib/Context/HomeContext";
 import React from "react";
 import Markdown from 'react-markdown'
 
@@ -41,13 +42,13 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
 ];
 
 function Brief() {
+    const { CoinData } = useHome()
+
+    if (!CoinData) return null
+
     return (
         <section className="flex flex-col gap-3">
-            {
-                BriefData.map((data, index) => (
-                    <Markdown key={index} children={data.text} />
-                ))
-            }
+            <Markdown children={CoinData.description?.en || ""} />
         </section>
     );
 }

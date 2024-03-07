@@ -1,73 +1,80 @@
 import SectionHeading from '@/components/common/Section_Heading'
-import { InfoIcon } from 'lucide-react'
-import { MenuItem } from 'primereact/menuitem'
-import React from 'react'
+import { useHome } from '@/lib/Context/HomeContext'
+import FormatDate from '@/utils/FormatDate'
+import React, { useMemo } from 'react'
 
 interface FundamentalsListType {
     label: string
     value: string | React.JSX.Element
 }
-const FundamentalsList: FundamentalsListType[] = [
-    {
-        label: 'Bitcoin Price',
-        value: '$16,815.46'
-    },
-    {
-        label: '24h Low / 24h High',
-        value: '$16,382.07 / $16,874.12'
-    },
-    {
-        label: '7d Low / 7d High',
-        value: '$16,382.07 / $16,874.12'
-    },
-    {
-        label: 'Trading Volume',
-        value: '$23,249,202,782'
-    },
-    {
-        label: 'Market Cap Rank',
-        value: ''
-    },
-    {
-        label: 'Market Cap',
-        value: '$323,507,290,047'
-    },
-    {
-        label: 'Market Cap Dominance',
-        value: '38.343%'
-    },
-    {
-        label: 'Volume / Market Cap',
-        value: '0.0718'
-    },
-    {
-        label: 'All-Time High',
-        value: (
-            <div className='flex flex-col items-end'>
-                <div className='flex gap-1 items-center font-semibold'>
-                    <span className=''>$69,044.77</span>
-                    <span className='text-red-500'>-75.6%</span>
-                </div>
-                <p className='text-sm'>{`Nov 10, 2021 (about 1 year)`}</p>
-            </div>
-        )
-    },
-    {
-        label: 'All-Time Low',
-        value: (
-            <div className='flex flex-col items-end'>
-                <div className='flex gap-1 items-center font-semibold'>
-                    <span className=''>$67.81</span>
-                    <span className='text-green-500'>24729.1%</span>
-                </div>
-                <p className='text-sm'>{`Jul 06, 2013 (over 9 years)`}</p>
-            </div>
-        )
-    },
-
-]
 
 function Fundamentals() {
+    const { CoinData } = useHome()
+    const market_data = CoinData?.market_data
+
+    if (!market_data) return null
+
+    const SevenDLow = market_data?.current_price?.usd - (market_data?.current_price?.usd * (market_data?.price_change_percentage_7d_in_currency?.usd / 100))
+    const SevenDHigh = market_data?.current_price?.usd + (market_data?.current_price?.usd * (market_data?.price_change_percentage_7d_in_currency?.usd / 100))
+
+    const FundamentalsList: FundamentalsListType[] = useMemo(() => ([
+        {
+            label: `${CoinData?.name} Price`,
+            value: `$${market_data?.current_price?.usd}`
+        },
+        {
+            label: '24h Low / 24h High',
+            value: `$${market_data?.low_24h?.usd} / $${market_data?.high_24h?.usd}`
+        },
+        {
+            label: '7d Low / 7d High',
+            value: `$${SevenDLow?.toFixed(4)} / $${SevenDHigh?.toFixed(4)}`
+        },
+        {
+            label: 'Trading Volume',
+            value: `$${market_data?.total_volume?.usd}`
+        },
+        {
+            label: 'Market Cap Rank',
+            value: `${market_data?.market_cap_rank}`
+        },
+        {
+            label: 'Market Cap',
+            value: `$${market_data?.market_cap?.usd}`
+        },
+        {
+            label: 'Market Cap Dominance',
+            value: `${market_data?.market_cap_change_percentage_24h_in_currency?.usd?.toFixed(4)}%`
+        },
+        {
+            label: 'Volume / Market Cap',
+            value: `${(market_data?.total_volume?.usd / market_data?.market_cap?.usd)?.toFixed(4)}`
+        },
+        {
+            label: 'All-Time High',
+            value: (
+                <div className='flex flex-col items-end'>
+                    <div className='flex gap-1 items-center font-semibold'>
+                        <span className=''>${market_data?.ath?.usd}</span>
+                        <span className='text-red-500'>{market_data?.ath_change_percentage?.usd?.toFixed(2)}%</span>
+                    </div>
+                    <p className='text-sm'>{FormatDate(market_data?.ath_date?.usd)}</p>
+                </div>
+            )
+        },
+        {
+            label: 'All-Time Low',
+            value: (
+                <div className='flex flex-col items-end'>
+                    <div className='flex gap-1 items-center font-semibold'>
+                        <span className=''>${market_data?.atl?.usd}</span>
+                        <span className='text-green-500'>{market_data?.atl_change_percentage?.usd?.toFixed(2)}%</span>
+                    </div>
+                    <p className='text-sm'>{FormatDate(market_data?.atl_date?.usd)}</p>
+                </div>
+            )
+        },
+    ]), [Object.keys(market_data).length])
     return (
         <section>
             <SectionHeading Heading='Fundamentals' />
