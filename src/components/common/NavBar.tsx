@@ -20,7 +20,7 @@ const items: MenuItem[] = [
         template: () => {
             return (
                 <div className='px-5'>
-                    <Button label="Get Started" className='bg-koinx-blue py-2 rounded-lg' />
+                    <Button label="Get Started" className='bg-koinx-blue text-white p-2 rounded-lg' />
                 </div>
             )
         }
