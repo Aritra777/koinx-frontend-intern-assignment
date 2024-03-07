@@ -13,7 +13,6 @@ function Performance() {
 
     const market_data = CoinData?.market_data
     if (!market_data) return <Loading />
-    console.log("market data", CoinData)
 
     return (
         <Section id='performance'>
@@ -23,7 +22,7 @@ function Performance() {
 
                     <div className='flex gap-3 items-center'>
                         <div className='flex flex-col gap-3 items-center'>
-                            <p className='text-gray-500'>Today's Low</p>
+                            <p className='text-gray-500'>Today&apos;s Low</p>
                             <p className='text-gray-500 font-semibold'>${market_data?.low_24h?.usd}</p>
                         </div>
                         <div className='flex-1'>
@@ -35,20 +34,20 @@ function Performance() {
                             </div>
                         </div>
                         <div className='flex flex-col gap-3 items-center'>
-                            <p className='text-gray-500'>Today's High</p>
+                            <p className='text-gray-500'>Today&apos;s High</p>
                             <p className='text-gray-500 font-semibold'>${market_data?.high_24h?.usd}</p>
                         </div>
                     </div>
                     <div className='flex gap-3 items-center'>
                         <div className='flex flex-col gap-3 items-center'>
-                            <p className='text-gray-500'>Today's Low</p>
+                            <p className='text-gray-500'>Today&apos;s Low</p>
                             <p className='text-gray-500 font-semibold'>${market_data?.low_24h?.usd}</p>
                         </div>
                         <div className='flex-1'>
                             <div className='relative h-1 w-full rounded-[999px] bg-gradient-to-r to-red-500 via-orange-400 from-green-500' />
                         </div>
                         <div className='flex flex-col gap-3 items-center'>
-                            <p className='text-gray-500'>Today's High</p>
+                            <p className='text-gray-500'>Today&apos;s High</p>
                             <p className='text-gray-500 font-semibold'>${market_data?.high_24h?.usd}</p>
                         </div>
                     </div>

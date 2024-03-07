@@ -6,7 +6,6 @@ import RecomendCard from '../RecomendCard.tsx'
 
 function Recomends({ interval }: { interval?: number }) {
     const { data: TrendingCoinData, isLoading, isError } = useGetTrendingCoins()
-    console.log(TrendingCoinData)
 
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>

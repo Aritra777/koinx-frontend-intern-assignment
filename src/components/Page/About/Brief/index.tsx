@@ -10,7 +10,9 @@ function Brief() {
 
     return (
         <section className="flex flex-col gap-3">
-            <Markdown children={CoinData.description?.en || ""} rehypePlugins={[rehypeRaw]} />
+            <Markdown rehypePlugins={[rehypeRaw]} >
+                {CoinData.description?.en || ""}
+            </Markdown>
         </section>
     );
 }

@@ -12,8 +12,6 @@ function Fundamentals() {
     const { CoinData } = useHome()
     const market_data = CoinData?.market_data
 
-    if (!market_data) return null
-
     const SevenDLow = market_data?.current_price?.usd - (market_data?.current_price?.usd * (market_data?.price_change_percentage_7d_in_currency?.usd / 100))
     const SevenDHigh = market_data?.current_price?.usd + (market_data?.current_price?.usd * (market_data?.price_change_percentage_7d_in_currency?.usd / 100))
 
@@ -75,6 +73,10 @@ function Fundamentals() {
             )
         },
     ]), [Object.keys(market_data).length])
+
+
+    if (!market_data) return null
+
     return (
         <section id='fundamentals'>
             <SectionHeading Heading='Fundamentals' />

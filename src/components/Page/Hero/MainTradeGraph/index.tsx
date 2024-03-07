@@ -6,7 +6,6 @@ function TradingViewWidget() {
     const scriptRef = useRef<HTMLScriptElement | null>(null);
 
     useEffect(() => {
-        console.log('useEffect')
         if (!containerRef.current) return;
 
         // Clean up existing script

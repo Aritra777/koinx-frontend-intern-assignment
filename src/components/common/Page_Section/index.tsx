@@ -12,8 +12,10 @@ function Section({ children, ...props }: SectionProps) {
     )
 }
 
-Section.Heading = ({ children }: { children?: React.ReactNode }) => (
+Section.Heading = React.memo(({ children }: { children?: React.ReactNode }) => (
     <h2 className='text-2xl font-semibold'>{children}</h2>
-)
+), () => true);
+
+Section.Heading.displayName = 'Section.Heading';
 
 export default Section

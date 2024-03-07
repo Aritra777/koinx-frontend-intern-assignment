@@ -19,7 +19,6 @@ export default function Main({ params }: { params: { coinId: string } }) {
   const { setCoinData } = useHome();
   const { data, isError } = useGetCoinDetails(coinId);
   const [notFound, setNotFound] = useState(false);
-  console.log("data", data);
   useEffect(() => {
     if (isError || data?.error) {
       setNotFound(true);
