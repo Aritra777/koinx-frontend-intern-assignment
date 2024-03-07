@@ -16,7 +16,7 @@ function Performance() {
     console.log("market data", CoinData)
 
     return (
-        <Section>
+        <Section id='performance'>
             <section className='flex flex-col gap-3'>
                 <h2 className='text-2xl font-semibold'>Performance</h2>
                 <div className='flex flex-col gap-6'>

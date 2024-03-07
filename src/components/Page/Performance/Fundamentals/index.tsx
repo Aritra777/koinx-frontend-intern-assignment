@@ -76,7 +76,7 @@ function Fundamentals() {
         },
     ]), [Object.keys(market_data).length])
     return (
-        <section>
+        <section id='fundamentals'>
             <SectionHeading Heading='Fundamentals' />
             <div>
                 <ul className='w-full'>

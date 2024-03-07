@@ -27,8 +27,10 @@ export default function RootLayout({
             <body className={inter.className}>
               <div>
                 <NavBar />
-                <div className="box-content px-3 bg-gray-200">
-                  {children}
+                <div className=" bg-gray-200">
+                  <div className="max-w-maxScreen mx-auto box-content px-3">
+                    {children}
+                  </div>
                 </div>
               </div>
             </body>

@@ -5,7 +5,7 @@ import Promo from './Promo'
 
 function About() {
     return (
-        <Section>
+        <Section id='about'>
             <Section.Heading>About</Section.Heading>
             <Brief />
             <Promo />

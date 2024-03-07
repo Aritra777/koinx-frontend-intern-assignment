@@ -30,7 +30,7 @@ function NavBar() {
         <div className=''>
             <Menubar model={items} pt={{
                 root: {
-                    className: 'justify-end bg-white rounded-none',
+                    className: 'justify-end bg-white rounded-none max-w-maxScreen mx-auto border-none',
                 },
                 popupIcon: {
                     className: 'shadow-none focus:shadow-none',

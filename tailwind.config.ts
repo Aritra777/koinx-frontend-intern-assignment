@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        maxScreen: "1300px",
+      },
       colors: {
         "koinx-blue": "#0052FE",
         "koinx-green": "#00A8A8",

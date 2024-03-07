@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, memo } from 'react';
 
-function TradingViewWidget({ interval }: { interval: string }) {
+function TradingViewWidget() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [scriptLoaded, setScriptLoaded] = useState(false);
     const scriptRef = useRef<HTMLScriptElement | null>(null);
@@ -12,6 +12,7 @@ function TradingViewWidget({ interval }: { interval: string }) {
         // Clean up existing script
         if (scriptRef.current && scriptLoaded) {
             containerRef.current.removeChild(scriptRef.current);
+            // script.removeChild(scriptRef.current);
             setScriptLoaded(false);
         }
 
@@ -24,7 +25,7 @@ function TradingViewWidget({ interval }: { interval: string }) {
         {
           "autosize": true,
           "symbol": "NASDAQ:AAPL",
-          "interval": "${interval || "D"}",
+          "interval": "W",
           "timezone": "Etc/UTC",
           "theme": "light",
           "style": "3",
@@ -35,8 +36,7 @@ function TradingViewWidget({ interval }: { interval: string }) {
           "hide_legend": true,
           "save_image": false,
           "calendar": true,
-          "hide_volume": true,
-          "support_host": "https://www.tradingview.com"
+          "hide_volume": true
         }`;
         containerRef.current.appendChild(script);
         scriptRef.current = script;
@@ -45,13 +45,16 @@ function TradingViewWidget({ interval }: { interval: string }) {
             if (containerRef.current && scriptLoaded) {
                 containerRef.current.removeChild(script);
                 setScriptLoaded(false);
+                scriptRef.current = null;
             }
         };
     }, []);
 
     return (
-        <div className="tradingview-widget-container w-full h-[50vw] max-h-[600px]" ref={containerRef}>
-            <div className="tradingview-widget-container__widget" style={{ height: "calc(100% - 32px)", width: "100%" }}></div>
+        <div className='h-[50vw] max-h-[400px] max-w-maxScreen'>
+            <div className="tradingview-widget-container" ref={containerRef} style={{ height: "100%", width: "100%" }}>
+                <div className="tradingview-widget-container__widget" style={{ height: "calc(100% - 32px)", width: "100%" }}></div>
+            </div>
         </div>
     );
 }

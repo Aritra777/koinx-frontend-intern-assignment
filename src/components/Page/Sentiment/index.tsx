@@ -5,7 +5,7 @@ import Section from '@/components/common/Page_Section'
 
 function Sentiment() {
     return (
-        <Section>
+        <Section id='sentiments'>
             <Section.Heading>Sentiment</Section.Heading>
             <KeyEvents />
             <Estimates />
