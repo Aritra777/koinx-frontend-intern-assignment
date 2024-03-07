@@ -6,6 +6,7 @@ import Performance from "@/components/Page/Performance";
 import Sentiment from "@/components/Page/Sentiment";
 import SidePanel from "@/components/Page/SidePanel";
 import AboutTeam from "@/components/Page/Team";
+import Tokenomics from "@/components/Page/Tokenomics";
 import BreadCrumb from "@/components/common/BreadCrumb";
 import Section from "@/components/common/Page_Section";
 import TabMenuComp from "@/components/common/TabMenu";
@@ -27,15 +28,16 @@ export default function Main({ params }: { params: { coinId: string } }) {
 
   return (
     <>
-      {/* <BreadCrumb route={coinId} /> */}
+      <BreadCrumb route={coinId} />
       <main className="">
-        <div className="flex md:flex-row flex-col gap-6 border border-red-600">
+        <div className="flex md:flex-row flex-col gap-6">
           <div className="space-y-8 flex-1">
             <Hero coinid={coinId} />
             <TabMenuComp />
             <Performance />
             {/* <Sentiment /> */}
             <About />
+            <Tokenomics />
             <AboutTeam />
           </div>
           <div className="basis-1/3">

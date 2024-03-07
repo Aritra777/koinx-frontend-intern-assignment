@@ -4,7 +4,7 @@ import { Carousel } from 'primereact/carousel'
 import React from 'react'
 import RecomendCard from '../RecomendCard.tsx'
 
-function Recomends() {
+function Recomends({ interval }: { interval?: number }) {
     const { data: TrendingCoinData, isLoading, isError } = useGetTrendingCoins()
     console.log(TrendingCoinData)
 
@@ -25,9 +25,9 @@ function Recomends() {
                         SparkLine={coin.item.data.sparkline}
                     />
                 }}
-                numVisible={3}
-                numScroll={1}
-                autoplayInterval={3000}
+                numVisible={5}
+                numScroll={3}
+                autoplayInterval={interval || 3000}
                 responsiveOptions={[
                     {
                         breakpoint: '1024px',

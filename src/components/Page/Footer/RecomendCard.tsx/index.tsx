@@ -13,7 +13,7 @@ interface RecomendCardProps {
 
 function RecomendCard({ CoinId, CoinLogo, CoinSymbol, CoinMarketChange, CurrentPrice, SparkLine }: RecomendCardProps) {
     return (
-        <Link href={CoinId} className='w-[90%] max-w-[200px] flex flex-col gap-3 p-3 mx-3 rounded-primary border border-slate-200 hover:scale-105 transition-all overflow-hidden'>
+        <Link href={CoinId} className='w-[90%] max-w-[200px] flex flex-col gap-3 p-3 mx-3 bg-white rounded-primary border border-slate-200 hover:scale-105 transition-all overflow-hidden'>
             <div className='flex items-center gap-2'>
                 <Image src={CoinLogo} alt={CoinSymbol} width={20} height={20} className='rounded-full' />
                 <span className='font-semibold'>{CoinSymbol}</span>

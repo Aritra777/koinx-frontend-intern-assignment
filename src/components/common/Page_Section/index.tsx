@@ -1,10 +1,12 @@
+import { classNames } from 'primereact/utils'
 import React from 'react'
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 }
-function Section({ children, ...etc }: SectionProps) {
+function Section({ children, ...props }: SectionProps) {
+    const { className: cn, ...etc } = props
     return (
-        <section className='space-y-6 border border-surface p-3 py-5 rounded-primary bg-white' {...etc}>
+        <section className={classNames('space-y-6 border border-surface p-3 py-5 rounded-primary bg-white', cn)} {...etc}>
             {children || <></>}
         </section>
     )

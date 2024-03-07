@@ -32,13 +32,13 @@ const ProfileData: ProfileCardProps[] = [
 const TeamCard = ({ name, role, image, desciption }: ProfileCardProps) => {
     return (
         <div>
-            <div className='flex flex-col gap-4 p-3 bg-blue-100 rounded-primary'>
-                <div className='flex flex-col justify-center items-center  gap-1'>
+            <div className='flex flex-col md:flex-row md:items-center gap-4 p-3 bg-blue-100 rounded-primary'>
+                <div className='md:basis-1/6 flex flex-col justify-center items-center  gap-1'>
                     <Image src={image} alt={name} height={100} width={100} className='rounded-primary' />
-                    <h3 className='text-xl font-bold text-balance'>{name}</h3>
+                    <h3 className='text-xl md:text-base font-bold text-balance'>{name}</h3>
                     <p className='text-gray-500 text-sm font-semibold'>{role}</p>
                 </div>
-                <p className=''>{desciption}</p>
+                <p className='md:flex-1'>{desciption}</p>
             </div>
         </div>
     )

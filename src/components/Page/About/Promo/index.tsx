@@ -28,8 +28,8 @@ function Promo() {
                     PrompCards.map((card, index) => (
                         <div key={index} className={`flex gap-3 p-3 relative rounded-primary bg-gradient-to-br ${card.grediant}`}>
                             <Image src={card.img} alt={card.title} height={150} width={150} />
-                            <div className='flex flex-col gap-3 p-6'>
-                                <h3 className='text-2xl font-bold text-white text-balance'>{card.title}</h3>
+                            <div className='flex flex-col gap-3 p-6 md:p-4'>
+                                <h3 className='text-2xl md:text-xl font-bold text-white text-balance'>{card.title}</h3>
                                 <Button className='py-2 w-fit bg-white text-black font-semibold rounded-primary' icon={<ArrowRight size={18} />} iconPos='right' label='Check Now' ></Button>
                             </div>
                         </div>

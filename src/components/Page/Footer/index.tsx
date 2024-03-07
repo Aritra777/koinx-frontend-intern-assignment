@@ -4,11 +4,11 @@ import Section from '@/components/common/Page_Section'
 
 function Footer() {
     return (
-        <Section>
+        <Section className='mt-6'>
             <Section.Heading>You May Also Like</Section.Heading>
-            <Recomends />
+            <Recomends interval={3000} />
             <Section.Heading>Trending Coins</Section.Heading>
-            <Recomends />
+            <Recomends interval={4000} />
         </Section>
     )
 }

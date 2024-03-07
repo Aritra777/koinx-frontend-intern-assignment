@@ -79,15 +79,34 @@ function Fundamentals() {
         <section id='fundamentals'>
             <SectionHeading Heading='Fundamentals' />
             <div>
-                <ul className='w-full'>
-                    {FundamentalsList.map((item, index) => (
-                        <li key={index} className='flex gap-3 justify-between items-center w-full py-3 border-b border-slate-200'>
-                            <span className='text-gray-500'>{item.label}</span>
-                            {
-                                typeof item.value === 'string' ? <span className='text-gray-500 font-semibold'>{item.value}</span> : item.value
-                            }
-                        </li>
-                    ))}
+                <ul className='w-full md:grid md:grid-cols-2 md:gap-6'>
+                    <div>
+
+                        {
+                            // devide fundamentals list into two columns
+                            FundamentalsList.slice(0, 5).map((item, index) => (
+                                <li key={index} className='h-16 flex gap-3 justify-between items-center w-full border-b border-slate-200'>
+                                    <span className='text-gray-500'>{item.label}</span>
+                                    {
+                                        typeof item.value === 'string' ? <span className='text-gray-500 font-semibold'>{item.value}</span> : item.value
+                                    }
+                                </li>
+                            ))
+                        }
+                    </div>
+                    <div>
+                        {
+                            // devide fundamentals list into two columns
+                            FundamentalsList.slice(5, 10).map((item, index) => (
+                                <li key={index} className='h-16 flex gap-3 justify-between items-center w-full border-b border-slate-200'>
+                                    <span className='text-gray-500'>{item.label}</span>
+                                    {
+                                        typeof item.value === 'string' ? <span className='text-gray-500 font-semibold'>{item.value}</span> : item.value
+                                    }
+                                </li>
+                            ))
+                        }
+                    </div>
                 </ul>
             </div>
         </section>
