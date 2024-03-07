@@ -33,7 +33,6 @@ function Hero({ coinid }: { coinid: string }) {
             />
             <Divider />
             <TradeGraph CoinName={CoinData?.name} />
-            <MainTradeGraph />
         </Section>
     )
 }

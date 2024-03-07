@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const fetchCoinDetails = async (coinId: string) => {
   const response = await fetch(
-    `https://api.coingecko.com/api/v3/coins/${coinId}`
+    `${process.env.NEXT_PUBLIC_COINGEKO_BASE}/coins/${coinId}`
   );
   const data = await response.json();
   return data;
