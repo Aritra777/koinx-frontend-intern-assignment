@@ -41,7 +41,7 @@ function TradeGraph({ CoinName }: { CoinName: string }) {
                 <div className='space-x-2'>
                     {DataTimes.map((item, index) => (
                         <Button key={index} label={item.label} unstyled className={classNames('px-1 font-semibold', {
-                            'bg-blue-100 text-blue-500 rounded-xl': SelectedTime === item.value,
+                            'bg-blue-100 text-koinx-blue rounded-xl': SelectedTime === item.value,
                             'text-gray-500': SelectedTime !== item.value
                         })} onClick={() => setSelectedTime(item.value)} />
                     ))}

@@ -72,7 +72,7 @@ function TabMenuComp() {
                 },
                 action: ({ context, parent }: { context: any, parent: any }) => ({
                     className: classNames('px-4 py-2 font-semibold whitespace-nowrap bg-transparent', {
-                        'text-blue-500 border-blue-500 rounded-t-xl': context.index === activeIndex,
+                        'text-koinx-blue border-koinx-blue rounded-t-xl': context.index === activeIndex,
                         'text-gray-500': context.index !== activeIndex
                     }),
                 })

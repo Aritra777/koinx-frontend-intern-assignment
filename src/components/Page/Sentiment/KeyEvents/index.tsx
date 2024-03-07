@@ -31,7 +31,7 @@ const KeyEventCardsData: CardType[] = [
         title: 'Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim ',
         description: 'Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.',
         icon: () => (
-            <div className='w-10 h-10 grid place-content-center rounded-full bg-blue-500'><Newspaper color='#fff' /></div>
+            <div className='w-10 h-10 grid place-content-center rounded-full bg-koinx-blue'><Newspaper color='#fff' /></div>
         )
     },
     {
