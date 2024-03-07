@@ -33,8 +33,8 @@ function Estimates() {
     return (
         <div className='space-y-3'>
             <SectionHeading Heading='Analyst Estimates' />
-            <div className='flex gap-3 text-gray-500'>
-                <div className='h-fit basis-1/3 grid place-content-center grid-flow-col relative'>
+            <div className='flex gap-3 text-gray-500 md:w-[90%'>
+                <div className='h-fit basis-1/3 md:basis-1/5 grid place-content-center grid-flow-col relative'>
                     <div className='text-[40px] h-32 w-32 text-green-500 grid grid-flow-col place-items-center place-content-center bg-green-500/10 rounded-full' >{Math.floor(CoinData?.sentiment_votes_up_percentage) || 0}<span className='text-xl'>%</span></div>
                 </div>
                 <div className='flex flex-col justify-around flex-1'>

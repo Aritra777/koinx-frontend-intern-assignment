@@ -5,7 +5,7 @@ import React from 'react'
 
 function PromoCard() {
     return (
-        <div className="p-6 flex flex-col justify-center items-center gap-3 text-white rounded-primary bg-koinx-blue">
+        <div className="p-6 xl:px-12 px-8 flex flex-col justify-center items-center gap-3 text-white rounded-primary bg-koinx-blue">
             <p className="text-2xl font-bold text-center">Get Started with KoinX for FREE</p>
             <p className="text-sm text-center px-6">With our range of features that you can equip for free,
                 KoinX allows you to be more educated and aware of your tax reports.</p>

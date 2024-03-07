@@ -36,7 +36,7 @@ function TradeGraph({ CoinName }: { CoinName: string }) {
     const [SelectedTime, setSelectedTime] = React.useState('D')
     return (
         <div className='max-w-full'>
-            <div className='flex flex-wrap gap-x-6 gap-y-3'>
+            <div className='flex flex-wrap md:justify-between gap-x-6 gap-y-3'>
                 <p className='text-xl font-semibold'>{CoinName} Price Chart (USD)</p>
                 <div className='space-x-2'>
                     {DataTimes.map((item, index) => (

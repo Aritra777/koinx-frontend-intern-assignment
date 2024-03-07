@@ -51,7 +51,7 @@ function TradingViewWidget() {
     }, []);
 
     return (
-        <div className='h-[50vw] max-h-[400px] max-w-maxScreen'>
+        <div className='h-[50vw] max-h-[400px]'>
             <div className="tradingview-widget-container" ref={containerRef} style={{ height: "100%", width: "100%" }}>
                 <div className="tradingview-widget-container__widget" style={{ height: "calc(100% - 32px)", width: "100%" }}></div>
             </div>

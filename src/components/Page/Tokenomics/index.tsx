@@ -4,7 +4,7 @@ import RoundChart from './Chart'
 
 function Tokenomics() {
     return (
-        <Section>
+        <Section id='tokenomics'>
             <Section.Heading>{`Tokenomics`}</Section.Heading>
             <RoundChart />
             <p>

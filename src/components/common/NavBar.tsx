@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { Menubar } from 'primereact/menubar'
 import { MenuItem } from 'primereact/menuitem'
@@ -28,20 +29,22 @@ const items: MenuItem[] = [
 function NavBar() {
     return (
         <div className=''>
-            <Menubar model={items} pt={{
-                root: {
-                    className: 'justify-end bg-white rounded-none max-w-maxScreen mx-auto border-none',
-                },
-                popupIcon: {
-                    className: 'shadow-none focus:shadow-none',
-                },
-                button: {
-                    className: 'shadow-none focus:shadow-none',
-                },
-                menuitem: {
-                    className: "text-black font-semibold"
-                }
-            }} />
+            <Menubar model={items}
+                start={<Image src="/assets/main_logo.png" alt="KoinX" height={50} width={100} />}
+                pt={{
+                    root: {
+                        className: 'justify-between bg-white rounded-none max-w-maxScreen mx-auto border-none',
+                    },
+                    popupIcon: {
+                        className: 'shadow-none focus:shadow-none',
+                    },
+                    button: {
+                        className: 'shadow-none focus:shadow-none',
+                    },
+                    menuitem: {
+                        className: "text-black font-semibold"
+                    }
+                }} />
         </div>
     )
 }

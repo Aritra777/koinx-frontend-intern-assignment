@@ -26,7 +26,7 @@ function Recomends({ interval }: { interval?: number }) {
                     />
                 }}
                 numVisible={5}
-                numScroll={3}
+                numScroll={1}
                 autoplayInterval={interval || 3000}
                 responsiveOptions={[
                     {

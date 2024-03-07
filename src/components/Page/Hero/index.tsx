@@ -1,17 +1,10 @@
 'use client'
 import Section from '@/components/common/Page_Section'
 import React from 'react'
-import MainTradeGraph from './MainTradeGraph'
-import { Badge } from 'primereact/badge';
 import { useGetCoinDetails } from '@/lib/Api/FetchCoinDetails';
-import Image from 'next/image';
-import { ChevronUp, Divide } from 'lucide-react';
 import { Divider } from 'primereact/divider';
-import { Button } from 'primereact/button';
-import { classNames } from 'primereact/utils';
 import HeroHeader from './HeroHeader';
 import TradeGraph from './TradeGraph';
-import { ProgressSpinner } from 'primereact/progressspinner';
 import Loading from '@/components/common/Loading';
 
 function Hero({ coinid }: { coinid: string }) {
