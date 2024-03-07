@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "KoinX",
   description: "Created By Aritra Biswas",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({

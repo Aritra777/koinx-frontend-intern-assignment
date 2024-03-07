@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from 'primereact/button'
 import { Menubar } from 'primereact/menubar'
 import { MenuItem } from 'primereact/menuitem'
@@ -30,7 +31,11 @@ function NavBar() {
     return (
         <div className=''>
             <Menubar model={items}
-                start={<Image src="/assets/main_logo.png" alt="KoinX" height={50} width={100} />}
+                start={() => (
+                    <Link href='/'>
+                        <Image src="/assets/main_logo.png" alt="KoinX" height={50} width={100} />
+                    </Link>
+                )}
                 pt={{
                     root: {
                         className: 'justify-between bg-white rounded-none max-w-maxScreen mx-auto border-none',
