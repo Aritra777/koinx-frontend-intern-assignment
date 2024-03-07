@@ -10,7 +10,7 @@ function PromoCard() {
             <p className="text-sm text-center px-6">With our range of features that you can equip for free,
                 KoinX allows you to be more educated and aware of your tax reports.</p>
             <Image src={"/assets/Frame.png"} alt="add" height={180} width={180} className="rounded-primary" />
-            <Button className='bg-white text-black py-2 rounded-lg w-fit mx-auto ' >
+            <Button className='bg-white text-black py-2 px-3 rounded-lg w-fit mx-auto ' >
                 Get Started for FREE
                 <ArrowRight size={18} />
             </Button>
